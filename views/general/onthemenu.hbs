@@ -1,0 +1,17 @@
+{{>hero}}
+<div class="container-fluid bgpic py-1">
+  <h4 class="text-center h5 mb-1 col2">{{message}}</h4>
+  <h1 class="font text-center mb-3 mt-1">Our current Menu!</h1>
+  <div class="container text-center my-2">
+    {{#each foods}}
+    <h2 class="font h2">{{category}}s</h2>
+    <div id="{{category}}" class="row my-2 mx-5">
+      {{#each mealkits}}
+      <div class="col-md-6 my-3 d-flex justify-content-center">
+        {{>mealCard}}
+      </div>
+      {{/each}}
+    </div>
+    {{/each}}
+  </div>
+</div>

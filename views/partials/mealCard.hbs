@@ -1,0 +1,22 @@
+<div class="mealitem">
+    <a href="/description/{{_id}}" style="text-decoration: none">
+    <img class="mealimg" src="{{imageUrl}}" alt="mealIMG" />
+    <h3 class="h2 mb-0 mr-1">{{name}}</h3></a>
+    <p class="h5 font mb-0">{{included}}</p>
+    <div class="border mx-2">
+        <div class="container-fluid font">
+            <div class="row">
+                <div class="col borderset border-right-0 p-0">
+                    <p class="sizing text-center m-0 p-0">{{cookTime}} minutes</p>
+                </div>
+                <div class="col borderset border-right-0 p-0">
+                    <p class="sizing text-center m-0 p-0">{{servings}} Servings</p>
+                </div>
+                <div class="col borderset p-0">
+                    <p class="sizing text-center m-0 p-0">{{calories}} Calories</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="/addtoCart/otm/{{_id}}"><button type="button" class="font btn m-1">Buy now for ${{price}}</button></a>
+</div>

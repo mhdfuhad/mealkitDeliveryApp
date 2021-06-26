@@ -1,0 +1,51 @@
+<div class="container d-flex justify-content-center">
+  <form method="POST" action="/user/login" class="bcol my-4 rounded-sm formw" novalidate>
+    <div class="text-center">
+      <img class="logo pt-3" src="/images/logo.png" alt="logo" />
+      <h1 class="font py-2">Sign in</h1>
+    </div>
+    <!-- email field -->
+    <div class="form-group mx-4 mt-3">
+      {{#if check.email}}
+      <input class="form-control errorS" placeholder="Email" type="email" id="email" name="email"
+        value="{{values.email}}" />
+      <span class="error">{{ check.email }}</span>
+      {{else}}
+      <input class="form-control bcol1" placeholder="Email" type="email" id="email" name="email"
+        value="{{values.email}}" />
+      {{/if}}
+    </div>
+    <!-- password field -->
+    <div class="form-group mx-4 mb-2">
+      {{#if check.password}}
+      <input class="form-control errorS" placeholder="Password" type="password" id="password" name="password"
+        value="{{values.password}}" />
+      <span class="error">{{ check.password }}</span>
+      {{else}}
+      <input class="form-control bcol1" placeholder="Password" type="password" id="password" name="password"
+        value="{{values.password}}" />
+      {{/if}}
+    </div>
+    <!--radio buttons for customer/clerk-->
+    <fieldset class="form-group mx-4 mt-3 mb-0">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="radiobtn" id="customer" value="customer">
+        <label class="form-check-label" for="customer">Customer</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="radiobtn" id="clerk" value="clerk">
+        <label class="form-check-label" for="clerk">Data Entry Clerk</label>
+      </div>
+      {{#if check.radiobtn}}
+       <br><span class="error">{{ check.radiobtn }}</span>
+      {{/if}}
+     {{#if check.err}}
+       <br><span class="error">{{ check.err }}</span>
+      {{/if}}
+    </fieldset>
+    <!-- login button -->
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="sizing1 font btn btncol mx-4 my-4 btn-block py-2">Login</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,341 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.menuicon{
+  background-image: url(./images/menu.png);
+}
+.noutline{
+  outline: none;
+  border: none;
+}
+.error{
+  color: #FF0000;
+  font-size: 11px;
+  font-family: "Montserrat", serif;
+}
+.errorS{
+  border: solid;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  border-color: #FF0000;
+  border-width: 2px;
+}
+.errorS::placeholder{
+  color: #FF0000;
+}
+.errorS:focus{
+  box-shadow: none;
+  border-color: #FF0000;
+}
+.spoon{
+  width: 700px;
+  position: relative;
+  top: -55px;
+}
+.mr{    /* for logo */
+  margin-right: 105px;
+}
+.bgpic{ /*background for mealcards*/
+  background-image: url(./images/bgwall.jpg);
+}
+.btncol{ /* for button on login and register pages*/
+  color: #000000;
+  border: solid;
+  border-color: #b73225;
+  transition: all 0.3s ease 0s;
+}
+.btncol:hover{
+  color: #000000;
+  background-color: #b73225;
+  border: solid;
+  border-color: #641e17;
+}
+.bcol{
+  border: solid;
+  border-color: #b73225;
+  background-color: white;
+}
+.bcol1{
+  border: solid;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  border-color: #000000;
+  border-width: 2px;
+  transition: all 0.3s ease 0s;
+}
+.bcol1:focus,:hover{
+  box-shadow: none;
+  border-color: #b73225;
+}
+.formw{ /*custom width for form*/
+  width: 400px;
+}
+.cart{
+  border-top: solid;
+  border-bottom: solid;
+  border-color: #b73225;
+  border-width: 1px;
+  margin-bottom: 2px;
+  margin-right: 2px;
+}
+
+header {
+  background-color: #dce1e3;
+  border-bottom: solid;
+  border-color: #b73225;
+  border-width: thick;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+#pagebody{
+  position: relative;
+  min-height: 100vh;
+}
+#contentbody {
+  padding-bottom: 241px;
+}
+.font{
+  font-family: "Dancing Script", cursive, serif;
+}
+.font2{
+  font-family: "Montserrat", serif;
+}
+.sizing{ /* for font in mealcard*/
+  font-size: 20px;
+}
+.sizing1{ /* for font in form*/
+  font-size: 30px;
+}
+.borderset{
+  border: solid;
+  border-color: #b73225;
+  border-width: 2px;
+}
+.dec{
+  font-weight: bold;
+  display: inline-block;
+  font-size: 19px;
+  height: 30px;
+  width: 30px;
+  color: #b73225;
+  border: solid;
+  border-radius: 100%;
+  border-width: 2px;
+}
+.dec:hover{
+  text-decoration: none;
+  color: #641e17;
+}
+.logo {
+  width: 100px;
+  font-size: 25px;
+  font-family: "Dancing Script", cursive, serif;
+  text-decoration: none;
+  outline: none;
+  color: #5c5f58;
+}
+.logo {
+  transition: all 0.3s ease 0s;
+}
+.logo:hover {
+  color: #b73225;
+  text-decoration: none;
+}
+.links li a {
+  font-family: "Dancing Script", cursive, serif;
+  font-weight: 900;
+  font-size: 25px;
+  color: #b73225;
+  text-decoration: none;
+  outline: none;
+}
+.links li a {
+  transition: all 0.5s ease 0s;
+}
+.links li a:hover {
+  color: #641e17;
+  font-size: 140%;
+}
+.hero {
+  width: 100%;
+  height: 450px;
+  background-image: url(./images/hero.jpg);
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  border-bottom: solid;
+  border-color: #b73225;
+  border-width: thick;
+}
+.hero h2{
+  padding-top: 100px;
+  padding-bottom: 25px;
+}
+.hero h2, h3 {
+  font-family: "Dancing Script", cursive, serif;
+  text-align: center;
+  font-size: 60px;
+  color: #b73225;
+  text-shadow: 1px 1px #5c5f58;
+}
+.col2{
+  color: #b73225;
+  text-shadow: 1px 1px #000000;
+}
+.hero h3 {
+  font-size: 35px;
+}
+.imgrid {
+  width: 300px;
+  height: 300px;
+  border-radius: 25%;
+}
+.topdishes {
+  background-image: url(./images/bgwall.jpg);
+}
+.mealitem{
+  padding:0;
+  width: 415px;
+  border: solid;
+  border-color: #b73225;
+  border-width: 8px;
+  border-style:ridge;
+  box-shadow: 4px 7px #5c5f58;
+  background-color:white;
+}
+.mealitem h3, p{
+  text-align: right;
+  padding-top: 0px;
+  padding-right: 5px;
+}
+.mealitem button{
+  font-size: 18px;
+  width: 383px;
+  text-decoration: none;
+  cursor: pointer;
+  border: solid;
+  border-color:  #b73225;
+  outline: none;
+  color: #000000;
+  transition: all 0.3s ease 0s;
+}
+.mealitem button:focus{
+  box-shadow: none;
+}
+.mealitem button:hover{
+  color: #000000;
+  border-color:  #641e17;
+  background-color:  #b73225;
+}
+.mealimg{
+  width: 400px;
+  border-bottom: solid;
+  border-color: #b73225;
+}
+footer{
+  position: absolute;
+  width: 100%;
+  height: 241px;
+  bottom: 0;
+  background-color: #5C5F58;
+  text-align: center;
+  font-family: "Montserrat", serif;
+  color: #000000;
+}
+footer ul{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+.navftr h2{
+  padding-top: 40px;
+  font-size: 25px;
+}
+.navftr li{
+  padding: 0px 5px;
+  font-size: 15px;
+}
+.navftr a{
+  text-decoration: none;
+  color: black;
+  outline: none;
+}
+.navftr a:hover{
+  color: #641e17;
+}
+.socials h2{
+  font-size: 25px;
+}
+.socials li{
+  padding: 0px 5px;
+  font-size: 15px;
+}
+.socials a{
+  text-decoration: none;
+  color: black;
+  outline: none;
+}
+.socials a:hover{
+  color: #641e17;
+}
+.copyright p{
+  margin: 40px 0px 0px;
+  text-align: center;
+  background-color: #2f312e;
+  color: #000000;
+}
+.bt11 button{
+  font-size: 25px;
+  text-decoration: none;
+  cursor: pointer;
+  border: solid;
+  border-color:  #b73225;
+  outline: none;
+  color: #000000;
+  transition: all 0.3s ease 0s;
+}
+.bt11 button:focus{
+  box-shadow: none;
+}
+.bt11 button:hover{
+  color: #000000;
+  border-color:  #641e17;
+  background-color:  #b73225;
+}
+@media only screen and (max-width: 1000px){
+  .mealitem{
+    width: 315px;
+  }
+  .mealimg{
+    width: 300px;
+  }
+  .mealitem button{
+    width: 285px;
+  }
+  .sizing{
+    font-size: 14px;
+  }
+  .spoon{
+    width: 500px;
+    top: 0px;
+  }
+}
+@media only screen and (max-width: 768px){
+  .hero{
+    background-image:  url(./images/mbhero.jpg);
+  }
+  .hero h2{
+    padding-top: 20px;
+  }
+  .spoon{
+    width: 300px;
+    top: 0px;
+  }
+}

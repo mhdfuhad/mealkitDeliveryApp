@@ -1,0 +1,45 @@
+{{>hero}}
+<section class="container text-center">
+  <h1 class="font py-2">From our hands to your door</h1>
+  <p class="font h4 text-center">Make your choice of recipes – Place your order – Get excited to cook a wonderful meal!
+  </p>
+  <div class="row">
+    <div class="col-sm font2">
+      <img class="imgrid" src="/images/cont1.jpg" alt="cont1" />
+      <h2 class="font">Shop</h2>
+      <p class="h6 text-center">
+        No more grocery shopping and wasting unused ingredients, make your own meal kit with pre-measured ingredients
+        which means you only pay for what you need.
+      </p>
+    </div>
+    <div class="col-sm font2">
+      <img class="imgrid" src="/images/cont2.jpg" alt="cont2" />
+      <h2 class="font">Deliver</h2>
+      <p class="h6 text-center">
+        Schedule to receive regular deliveries right at your door, packed to keep your ingredients fresh and ready to
+        go.
+      </p>
+    </div>
+    <div class="col-sm font2">
+      <img class="imgrid" src="/images/cont3.jpg" alt="cont3" />
+      <h2 class="font">Cook</h2>
+      <p class="h6 text-center">
+        Try different recipes every week, ranging from quick breakfasts for the ones late to work to the full course
+        dinners for the ones looking to enjoy a nice Friday evening.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="container-fluid text-center topdishes">
+  <h1 class="font py-2">
+    Our top meals
+  </h1>
+  <div class="row justify-content-center pb-3">
+    {{#each top}}
+    <div class="mx-5 my-2">
+      {{>mealCard}}
+    </div>
+    {{/each}}
+  </div>
+</section>

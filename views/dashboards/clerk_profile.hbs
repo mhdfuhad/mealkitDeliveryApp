@@ -1,0 +1,134 @@
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Servings</th>
+                        <th scope="col">Top Dish</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each meals}}
+                    <tr>
+                        <td>{{name}}</td>
+                        <td>{{category}}</td>
+                        <td>${{price}}</td>
+                        <td>{{servings}}</td>
+                        {{#if topDish}}
+                        <td class="text-center">Yes</td>
+                        {{else}}
+                        <td class="text-center">No</td>
+                        {{/if}}
+                        <td class="text-center"><img style="width: 30px" src="{{imageUrl}}" alt="meal" /></td>
+                        <form method="POST" action="/dashboard/dataclerk" novalidate>
+                            <td><button class="btn btn-danger btn-lg btn-block p-1" style="font-size: 12px"
+                                    type="submit" name="edit" value="{{_id}}">Edit</button></td>
+                        </form>
+                        <form method="POST" action="/dashboard/deleteMeal" novalidate>
+                            <td><button class="btn btn-danger btn-lg btn-block p-1" style="font-size: 12px"
+                                    type="submit" name="delete" value="{{_id}}">X</button></td>
+                        </form>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <div class="col m-1">
+            {{#if doc}}
+            <form method="post" action="/dashboard/updateMeal" enctype="multipart/form-data" novalidate>
+            <h1 class="text-center font">Update Meal Form</h1>
+            <input type="hidden" id="_id" name="_id" value="{{doc._id}}">
+                {{else}}
+                <form method="post" action="/dashboard/addMeal" enctype="multipart/form-data" novalidate>
+                <h1 class="text-center font" >Add Meal Form</h1>
+                    {{/if}}
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" name="name" id="name" value="{{doc.name}}" />
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="category">Category</label>
+                            <input type="text" class="form-control" name="category" id="category" value="{{doc.category}}" />
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="topDish">Top Dish</label>
+                            <select name="topDish" id="topDish" class="form-control">
+                                {{#if doc.topDish}}
+                                <option value="{{doc.topDish}}" selected>True</option>
+                                <option value="false">False</option>
+                                {{else}}
+                                <option value="false" selected>False</option>
+                                <option value="true">True</option>
+                                {{/if}}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="included">Included</label>
+                        <input type="text" class="form-control" name="included" id="included" value="{{doc.included}}"/>
+                    </div>
+                    <div class="form-row ">
+                        <div class="form-group col-md-3 mb-0">
+                            <label for="cookTime">Cook Time</label>
+                            <input type="text" class="form-control" name="cookTime" id="cookTime" value="{{doc.cookTime}}" />
+                        </div>
+                        <div class="form-group col-md-3 mb-0">
+                            <label for="servings">Servings</label>
+                            <input type="text" class="form-control" name="servings" id="servings" value="{{doc.servings}}" />
+                        </div>
+                        <div class="form-group col-md-3 mb-0">
+                            <label for="calories">Calories</label>
+                            <input type="text" class="form-control" name="calories" id="calories" value="{{doc.calories}}" />
+                        </div>
+                        <div class="form-group col-md-3 mb-1">
+                            <label for="price">Price</label>
+                            <input type="text" class="form-control" name="price" id="price" value="{{doc.price}}" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="desc">Description</label>
+                        <textarea name="desc" class="form-control" value="{{doc.desc}}" rows="2" />{{doc.desc}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="imageUrl">Meal-kit Image (supported .jpg, .gif, .png)</label>
+                        {{#if doc}}
+                        <img style="width: 40px" src="{{doc.imageUrl}}" alt="meal" />
+                        {{/if}}
+                        <input type="file" class="form-control-file" id="imageUrl" name="imageUrl">
+                        {{#if errors}}
+                         <span class="error">{{errors.imgErr}}</span>
+                         <span class="error">{{errors.dataErr}}</span>
+                         {{/if}}
+                        <input type="hidden" id="imageUrl1" name="imageUrl1" value="{{doc.imageUrl}}">
+                    </div>
+                    {{#if doc}}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button type="submit" class="btn btn-danger btn-lg btn-block mb-1">Update</button>
+                        </div>
+                        <div class="col-md-6">
+                            <a type="submit" href="/dashboard/dataclerk" class="btn btn-secondary btn-lg btn-block mb-1">Cancel</a>
+                        </div>
+                    </div>
+                    {{else}}
+                     <div class="row">
+                        <div class="col-md-6">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block mb-1">Add</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="reset" class="btn btn-secondary btn-lg btn-block mb-1">Clear Form</a>
+                        </div>
+                    </div>
+                    {{/if}}
+                </form>
+        </div>
+    </div>
+</div>

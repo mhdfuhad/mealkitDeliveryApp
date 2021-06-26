@@ -1,0 +1,31 @@
+<div class="container-fluid bgpic py-5">
+    <div class="row m-5">
+        <div class="col-md-3">
+            <img class="img-fluid rounded borderset" style="width: 400px;" src="{{meal.imageUrl}}" alt="mealIMG" />
+        </div>
+        <div class="col-md-8 text-center">
+            <h1 class="font mt-1 col2">{{meal.name}}</h1>
+            <h2 class="font h3 col2">{{meal.included}}</h2>
+            <h4 class="font mt-3">Description</h4>
+            <h5 class="font2 mb-4">{{meal.desc}}</h5>
+            <div class="border mx-3">
+                <div class="container font">
+                    <div class="row text-center h3 mb-0">
+                        <div class="col borderset border-bottom-0 border-right-0 p-1">Cooking Time</div>
+                        <div class="col borderset border-bottom-0 border-right-0 p-1">Servings</div>
+                        <div class="col borderset border-bottom-0 p-1">Calories</div>
+                    </div>
+                    <div class="row text-center h4 mb-0">
+                        <div class="col borderset border-right-0 p-2">{{meal.cookTime}} minutes</div>
+                        <div class="col borderset border-right-0 p-2">{{meal.servings}} Servings</div>
+                        <div class="col borderset p-2">{{meal.calories}} Calories</div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid mt-3 bt11">
+                <span class="h5 mb-1 col2">{{message}}</span>
+                <a href="/addtoCart/desc/{{meal._id}}" style="text-decoration: none"><button type="button" class="font btn btn-lg btn-block">Buy now for ${{meal.price}}</button></a>
+            </div>
+        </div>
+    </div>
+</div>

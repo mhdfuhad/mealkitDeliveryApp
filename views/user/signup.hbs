@@ -1,0 +1,59 @@
+<div class="container d-flex justify-content-center">
+  <form method="POST" action="/user/signup" class="bcol my-4 rounded-sm formw" novalidate>
+    <div class="text-center">
+      <img class="logo pt-3" src="/images/logo.png" alt="logo" />
+      <h1 class="font py-2">Create Account</h1>
+    </div>
+    <!-- first name field -->
+    <div class="form-group mx-4 mt-3">
+      {{#if check.fName}}
+      <input class="form-control errorS" placeholder="First Name" type="text" id="fName" name="fName"
+        value="{{values.fName}}">
+      <span class="error">{{ check.fName }}</span>
+      {{else}}
+      <input class="form-control bcol1" placeholder="First Name" type="text" id="fName" name="fName"
+        value="{{values.fName}}">
+      {{/if}}
+    </div>
+    <!-- last name field -->
+    <div class="form-group mx-4">
+      {{#if check.lName}}
+      <input class="form-control errorS" placeholder="Last Name" type="text" id="lName" name="lName"
+        value="{{values.lName}}">
+      <span class="error">{{ check.lName }}</span>
+      {{else}}
+      <input class="form-control bcol1" placeholder="Last Name" type="text" id="lName" name="lName"
+        value="{{values.lName}}">
+      {{/if}}
+    </div>
+    <!-- email field -->
+    <div class="form-group mx-4">
+      {{#if check.email}}
+      <input class="form-control errorS" placeholder="Email" type="email" id="email" name="email"
+        value="{{values.email}}" />
+      <span class="error">{{ check.email }}</span>
+      {{else}}
+      <input class="form-control bcol1" placeholder="Email" type="email" id="email" name="email"
+        value="{{values.email}}" />
+      {{/if}}
+    </div>
+    <!-- password field -->
+    <div class="form-group mx-4 mb-2">
+      {{#if check.password}}
+      <input class="form-control errorS" placeholder="Password" type="password" id="password" name="password"
+        value="{{values.password}}" />
+      <span class="error">{{ check.password }}</span>
+      {{else}}
+      <input class="form-control bcol1" placeholder="Password" type="password" id="password" name="password"
+        value="{{values.password}}" />
+      {{/if}}
+      {{#if check.err}}
+       <br><span class="error">{{ check.err }}</span>
+      {{/if}}
+    </div>
+    <!-- register button -->
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="sizing1 font btn btncol mx-4 my-4 btn-block py-2">Sign Up</button>
+    </div>
+  </form>
+</div>
