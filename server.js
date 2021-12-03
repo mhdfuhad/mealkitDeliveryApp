@@ -12,7 +12,7 @@ const app = express();
 app.use(express.static(__dirname + "/public"));
 
 //DOTENV setup
-dotenv.config({path:"./config/apikey.env"});
+dotenv.config();
 
 // Set up express-fileupload
 app.use(fileUpload());
